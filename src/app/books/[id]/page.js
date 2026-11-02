@@ -8,7 +8,9 @@ import { MemoList } from "@/features/memos/MemoList";
 export default async function BookPage({ params }) {
   const { id } = await params;
   const book = await getBook(id);
-  if (!book) notFound();
+  if (!book) {
+    notFound();
+  }
 
   return (
     <>
